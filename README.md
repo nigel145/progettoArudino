@@ -1,2 +1,1 @@
-                                       ^ 
-aiutatemi a correggere questo progetto |
+aiutatemi a correggere questo progetto ^__^
