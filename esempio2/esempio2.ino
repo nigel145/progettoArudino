@@ -37,7 +37,7 @@ void loop() {
   }
 }
 
-boolean statoGuastoHardwere(){
+void statoGuastoHardwere(){
   int stato=digitalRead(guastoHardwere);
   if(stato==HIGH){
     Serial.println("guasto hardwere");
