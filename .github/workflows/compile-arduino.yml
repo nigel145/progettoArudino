@@ -1,0 +1,30 @@
+name: Compile Arduino Sketch
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install Arduino CLI
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
+          mv bin/arduino-cli /usr/local/bin/
+
+      - name: Set up Arduino CLI
+        run: |
+          arduino-cli config init
+          arduino-cli core update-index
+          arduino-cli core install arduino:avr
+
+      - name: Compile sketch
+        run: |
+          arduino-cli compile --fqbn arduino:avr:uno esempio2/esempio2.ino
