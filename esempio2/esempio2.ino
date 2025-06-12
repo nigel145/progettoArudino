@@ -3,7 +3,7 @@ String ipToGet="10.9.9.0";
 String utenteToGet="admin";
 String passwordToGet="password";
 
-String comando0="255,0,0,0";
+String comando0="255,0,0,0";   //comando
 String comando2="255,0,0,2";
 String comando4="255,0,0,4";
 
